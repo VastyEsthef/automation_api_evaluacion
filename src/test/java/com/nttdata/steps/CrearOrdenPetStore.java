@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class CrearOrdenPetStore {
 
     private static String CREATE_ORDER = "https://petstore.swagger.io/v2/store/order";
-    private static int orderId;  // Variable para almacenar el orderId
+    private static String orderId;  // Variable para almacenar el orderId
 
     public void crearOrden(int petId, int  quantity, String status) {
 
@@ -30,7 +30,7 @@ public class CrearOrdenPetStore {
         ;
 
         //Extraer el orderId de la respuesta y guardarlo en la variable
-        orderId = SerenityRest.lastResponse().jsonPath().getInt("id");
+        orderId = SerenityRest.lastResponse().body().path("id").toString();
         System.out.println("Orden creada con ID: " + orderId);
     }
 
