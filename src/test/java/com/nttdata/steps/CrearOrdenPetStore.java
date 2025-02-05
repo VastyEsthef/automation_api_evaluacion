@@ -29,11 +29,13 @@ public class CrearOrdenPetStore {
                 .log().all()
         ;
 
-        //Extraer el orderId de la respuesta y guardarlo en la variable
-        orderId = SerenityRest.lastResponse().body().path("id").toString();
-        System.out.println("Orden creada con ID: " + orderId);
+
     }
     public String obtenerOrderId() {
+        //Extraer el orderId de la respuesta y guardarlo en la variable
+        orderId = SerenityRest.lastResponse().body().path("id").toString();
+
+        System.out.println("Orden creada con ID: " + orderId);
         return orderId;
     }
 

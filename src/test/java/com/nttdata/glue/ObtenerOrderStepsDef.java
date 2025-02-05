@@ -10,16 +10,32 @@ public class ObtenerOrderStepsDef {
 
     ObtenerOrdenPetStore obtenerOrdenPetStore;
 
+
     @When("consulto la orden creada")
-    public void obtenerOrden(int orderId) {
-        obtenerOrdenPetStore.obtenerOrden(orderId);
+    public void obtenerOrden() {
+
+        obtenerOrdenPetStore.obtenerOrden();
+        //System.out.println("El Order ID: " + orderID);
+
+    }
+    @Then("el codigo de respuesta es {int}")
+    public void CodigoRespuestaa(int statusCode) {
+        obtenerOrdenPetStore.validarCodigoDeRespuesta(statusCode);
     }
 
-    //@Then("el codigo respuesta es {int}")
+    @And("el id del pet en la orden es {int}")
+    public void respuestaPetIdd(int petId) {
+        obtenerOrdenPetStore.validarRespuestaPetId(petId);
+    }
 
-    //@And("el id del pet en la orden es {int}")
+    @And("la cantidad en la orden es {int}")
+    public void respuesta_Cantidad(int quantity) {
+        obtenerOrdenPetStore.validarRespuestaCantidad(quantity);
+    }
 
-   //@And("la cantidad en la orden es {int}")
+    @And("el estado en la orden es {string}")
+    public void respuesta_Status(String status) {
+        obtenerOrdenPetStore.validarRespuestaStatusOrden(status);
+    }
 
-    //@And("el estado en la orden es {string}")
 }

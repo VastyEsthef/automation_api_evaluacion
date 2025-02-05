@@ -19,7 +19,7 @@ Feature: Crear orden en PetStore
   @testConsultaOrden
   Scenario Outline: Consultar la orden recién creada en PetStore
     When consulto la orden creada
-    Then el codigo respuesta es <statusCode>
+    Then el codigo de respuesta es <statusCode>
     And el id del pet en la orden es <petId>
     And la cantidad en la orden es <quantity>
     And el estado en la orden es "<status>"
