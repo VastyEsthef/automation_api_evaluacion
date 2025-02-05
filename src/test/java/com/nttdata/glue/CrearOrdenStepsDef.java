@@ -13,9 +13,9 @@ public class CrearOrdenStepsDef {
     @When("crea una orden con el pet {int}, la cantidad {int}, el estado {string}")
     public void crearOrden(int petId, int  quantity, String status) {
         crearOrden.crearOrden(petId, quantity, status);
-        //int orderId = crearOrden.obtenerOrderId(); // Obtener el ID de la orden creada
-        //OrderContext.setOrderId(orderId); // Guardarlo en el Singleton
-        //System.out.println("Se guardó el Order ID: " + orderId);
+        String orderId = crearOrden.obtenerOrderId(); // Obtener el ID de la orden creada
+        //orderId.setOrderId(orderId); // Guardarlo en el Singleton
+        System.out.println("Se guardó el Order ID: " + orderId);
     }
 
     @Then("el codigo respuesta es {int}")

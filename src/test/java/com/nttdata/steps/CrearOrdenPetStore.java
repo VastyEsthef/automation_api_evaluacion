@@ -33,7 +33,9 @@ public class CrearOrdenPetStore {
         orderId = SerenityRest.lastResponse().body().path("id").toString();
         System.out.println("Orden creada con ID: " + orderId);
     }
-
+    public String obtenerOrderId() {
+        return orderId;
+    }
 
 
     public void validarCodigoDeRespuesta(int statusCode) {
